@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+# MMDB Store (Vue 3 + Vite + Pinia)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a sub company based on my MMDB website for assignment 4  works using my MMDB site which uses the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction) and made for ICS3U Assignment 5.
 
-## Recommended IDE Setup
+<!-- ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) -->
