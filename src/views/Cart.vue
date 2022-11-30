@@ -3,20 +3,24 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 import Header from "../components/Header.vue"
-import Hero from "../components/Hero.vue"
 import Footer from "../components/Footer.vue"
+
+const router = useRouter();
+const username = ref("");
+const password = ref("");
+const error = ref(false);
+
 </script>
 
 <template>
     <div>
         <Header></Header>
-        <Hero></Hero>
-        <h1>Home</h1>
+        <h1>Cart</h1>
     </div>
 </template>
 
 <style scoped>
 div{
-text-align: center;
+    text-align: center;
 }
 </style>
