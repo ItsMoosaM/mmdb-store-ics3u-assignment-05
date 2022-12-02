@@ -1,6 +1,6 @@
-# MMDB Store (Vue 3 + Vite + Pinia)
+# MMDB Store (Vue 3 + Vite)
 
-This is a sub company based on my MMDB website for assignment 4  works using my MMDB site which uses the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction) and made for ICS3U Assignment 5.
+This is a sub company based on my MMDB website for assignment 4 and works using Vue and the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction), and is made for ICS3U Assignment 5.
 
 <!-- ## Recommended IDE Setup
 

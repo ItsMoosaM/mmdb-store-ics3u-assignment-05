@@ -1,4 +1,6 @@
 <script setup>
+// api_key= ba4adcc4706ed37650e0a813de11a08f;
+
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -10,17 +12,18 @@ const username = ref("");
 const password = ref("");
 const error = ref(false);
 
+
 </script>
 
 <template>
     <div>
-        <Header></Header>
-        <h1>Cart</h1>
+        <Header page="Cart" buttonPush="/" buttonName="Home"></Header>
+        <Footer></Footer>
     </div>
 </template>
 
 <style scoped>
-div{
+div {
     text-align: center;
 }
 </style>

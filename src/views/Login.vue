@@ -12,7 +12,7 @@ const password = ref("");
 const error = ref(false);
 
 const login = () => {
-    if (username.value === "MMDB" && password.value === "movies") {
+    if (username.value === "tmdb" && password.value === "movies") {
         router.push("/store");
     } else {
         error.value = true;
@@ -22,7 +22,7 @@ const login = () => {
 
 <template>
     <div>
-    <Header></Header>
+    <Header page="Login" buttonPush="/store" buttonName="Store"></Header>
         <div class="login-container">
             <h1>Login To Browse & Purchase</h1>
             <br>
@@ -33,9 +33,10 @@ const login = () => {
             </form>
             <br>
             <div v-if="error" class="error">
-                <p>Try "MMDB" for Username, and "movies" for Password. ( ;</p>
+                <p>Try "mmdb" for Username, and "movies" for Password. ( ;</p>
             </div>
         </div>
+    <Footer></Footer>
     </div>
 </template>
 

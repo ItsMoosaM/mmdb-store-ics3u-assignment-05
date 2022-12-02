@@ -2,17 +2,28 @@
 import router from '../router';
 import { useRouter } from "vue-router";
 
-const GoToLogin = () => {
-    router.push("/login");
+const props = defineProps({
+    page: String
+    , buttonName: String
+    , buttonPush: String
+})
+const pushTo = props.buttonPush;
+
+const GoToPage = () => {
+    router.push(pushTo);
+}
+const GoToHome = () => {
+    router.push('/');
 }
 </script>
 
 <template>
     <div>
         <div id="headerContainer">
-            <h1 class="title 1">MMDB</h1>
-            <h2 class="title2">Store</h2>
-            <button id="loginButton" @click="GoToLogin">Login</button>
+            <h1 class="title 1" @click="GoToHome">MMDB Store</h1>
+            <!-- <h2 class="title2" @click="GoToHome">Store</h2> -->
+            <h1 id="pageName">{{ props.page }}</h1>
+            <button id="loginButton" @click="GoToPage">{{ props.buttonName }}</button>
         </div>
     </div>
 </template>
@@ -28,13 +39,23 @@ const GoToLogin = () => {
 
 .title {
     background-color: black;
-    padding-left: 5%;
+    margin-left: 3%;
+    cursor: pointer;
 }
 
 .title2 {
     background-color: black;
     margin-left: 1%;
+    cursor: pointer;
     margin-top: 0.5%;
+}
+
+#pageName {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
 }
 
 #loginButton {

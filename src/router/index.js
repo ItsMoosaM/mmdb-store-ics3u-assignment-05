@@ -3,12 +3,13 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Store from "../views/Store.vue";
 import Cart from "../views/Cart.vue";
+import About from "../views/About.vue";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/home',
+      path: '/',
       component: Home
     },
     {
@@ -22,6 +23,10 @@ const router = createRouter({
     {
       path: '/cart',
       component: Cart
+    },
+    {
+      path: '/about',
+      component: About
     },
   ],
 });
