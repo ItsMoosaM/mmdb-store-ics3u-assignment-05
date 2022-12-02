@@ -16,14 +16,14 @@ const error = ref(false);
 </script>
 
 <template>
-    <div>
-        <Header page="Cart" buttonPush="/" buttonName="Home"></Header>
-        <Footer></Footer>
-    </div>
+  <div>
+    <Header page="Cart" buttonPush="/" buttonName="Home"></Header>
+    <Footer></Footer>
+  </div>
 </template>
 
 <style scoped>
 div {
-    text-align: center;
+  text-align: center;
 }
 </style>

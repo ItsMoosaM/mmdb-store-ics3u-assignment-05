@@ -12,7 +12,7 @@ onClickOutside(props.show = false)
 
 <template>
   <Transition>
-    <div v-if="show" class="modal-mask" >
+    <div v-if="show" class="modal-mask">
       <div class="modal-container">
         <button @click="$emit('close')" class="x-button">X</button>
         <div>
@@ -77,7 +77,9 @@ onClickOutside(props.show = false)
   background: none;
   border: none;
   cursor: pointer;
-}.x-button:hover{
+}
+
+.x-button:hover {
   color: #ffca45;
 }
 

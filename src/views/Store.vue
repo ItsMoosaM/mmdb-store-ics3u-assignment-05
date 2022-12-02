@@ -59,14 +59,14 @@ const print = (id) => {
 <template>
     <div class="store-container">
         <Header page="Store" buttonPush="/cart" buttonName="Cart"></Header>
-        <Transition>
             <div class="images">
-                <div class="image-container" v-for="movies in movieTrending" >
+        <TransitionGroup name="fade" tag="ul">
+                <div class="image-container" v-for="movies in movieTrending" :key="movies" >
                     <img class="moviePosters" :src="`https://image.tmdb.org/t/p/w500${movies.poster_path}`"
-                        :alt="movies.title" :props.movieId="`${movies.id}`" @click="getMoreMovieData(movies.id)" />
+                        :alt="movies.title" :props.movieId="`${movies.id}`" @click="getMoreMovieData(movies.id)"  />
                 </div>
+        </TransitionGroup>
             </div>
-        </Transition>
         <Suspense>
             <Modal :show="isModalOpen" @close="isModalOpen = false">
                 <template #default>
@@ -266,20 +266,26 @@ const print = (id) => {
     border-radius: 20px;
 }
 
-.close-button:hover {
+ .close-button:hover {
     background: #ffca45;
 }
 
-.v-enter-active {
-  transition: opacity 0.4s ease;
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-.v-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
+/* 2. declare enter from and leave to state */
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+
+/* 3. ensure leaving items are taken out of layout flow so that moving
+      animations can be calculated correctly. */
+.fade-leave-active {
+  position: absolute;
 }
 </style>

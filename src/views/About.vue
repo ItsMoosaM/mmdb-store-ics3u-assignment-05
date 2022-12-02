@@ -8,15 +8,15 @@ import Footer from "../components/Footer.vue"
 </script>
 
 <template>
-    <div>
-        <Header page="About" buttonPush="/" buttonName="Home"></Header>
-        
-        <Footer></Footer>
-    </div>
+  <div>
+    <Header page="About" buttonPush="/" buttonName="Home"></Header>
+
+    <Footer></Footer>
+  </div>
 </template>
 
 <style scoped>
-div{
-text-align: center;
+div {
+  text-align: center;
 }
 </style>
