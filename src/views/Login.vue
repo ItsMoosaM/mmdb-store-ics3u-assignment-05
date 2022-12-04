@@ -13,7 +13,7 @@ const error = ref(false);
 
 const login = () => {
     if (username.value === "tmdb" && password.value === "movies") {
-        router.push("/store");
+        router.push("/trending");
     } else {
         error.value = true;
     }
@@ -22,7 +22,7 @@ const login = () => {
 
 <template>
     <div>
-    <Header page="Login" buttonPush="/store" buttonName="Store"></Header>
+    <Header page="Login" buttonPush="/trending" buttonName="Store"></Header>
         <div class="login-container">
             <h1>Login To Browse & Purchase</h1>
             <br>
@@ -33,7 +33,7 @@ const login = () => {
             </form>
             <br>
             <div v-if="error" class="error">
-                <p>Try "mmdb" for Username, and "movies" for Password. ( ;</p>
+                <p>Try "tmdb" for Username, and "movies" for Password. ( ;</p>
             </div>
         </div>
     <Footer></Footer>
@@ -82,7 +82,7 @@ form {
     cursor: pointer;
 }#login:hover {
     background-color: rgb(161, 115, 17);
-    border: rgb(255, 186, 38) solid 3px;
+    border: rgb(255, 200, 83) solid 3px;
     color: black;
 }
 #login:active {
@@ -117,7 +117,7 @@ form input:focus {
 }
 
 form input:hover {
-    border-color: #ffc64b;
+    border-color: rgb(255, 200, 83);
     animation: glowEffect 0.5s infinite alternate-reverse;
 }
 

@@ -6,14 +6,12 @@ const props = defineProps({
   show: Boolean
 });
 
-// const modal = ref(null)
-onClickOutside(props.show = false)
 </script>
 
 <template>
   <Transition>
-    <div v-if="show" class="modal-mask">
-      <div class="modal-container">
+    <div v-if="show" class="modal-mask" @click="$emit('close')">
+      <div class="modal-container" @click.stop="">
         <button @click="$emit('close')" class="x-button">X</button>
         <div>
           <slot>
@@ -28,14 +26,12 @@ onClickOutside(props.show = false)
 .modal-mask {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .7);
   display: grid;
   place-items: center;
 }
 
 .modal-container {
-  /* display: grid;
-  grid-template-columns: repeat(6, 1fr); */
   background: #0f0d06;
   padding-top: 0%;
   padding: 0.5rem;
@@ -44,13 +40,6 @@ onClickOutside(props.show = false)
   height: 75vh;
   border: darkgoldenrod 0.5rem solid;
   border-radius: 0.05rem;
-}
-
-.modal-footer {
-  /* border-top: 1px solid #ddd; */
-  /* margin-top: 1rem; */
-  padding-top: 0.5rem;
-  font-size: 0.8rem;
 }
 
 .close-button {
@@ -68,12 +57,11 @@ onClickOutside(props.show = false)
 }
 
 .x-button {
-  /* display: flex; */
+  /* display: flex;
+  justify-content: right; */
   position: absolute;
   text-align: right;
-  /* top: 0px;
-  right: 0px; */
-  /* left: 93%; */
+  
   background: none;
   border: none;
   cursor: pointer;
@@ -92,7 +80,7 @@ onClickOutside(props.show = false)
 }
 
 .v-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 
 .v-enter-from,

@@ -129,7 +129,7 @@ h1 {
   /* margin-right: auto; */
   background-color: transparent;
   opacity: 0%;
-  animation: 3s linear 2.5s textFade;
+  animation: 2.5s linear 2.5s textFade;
   animation-fill-mode: forwards;
 }
 

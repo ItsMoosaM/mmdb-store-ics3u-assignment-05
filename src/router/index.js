@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
-import Store from "../views/Store.vue";
+import Trending from "../views/Trending.vue";
+import TopRated from "../views/TopRated.vue";
 import Cart from "../views/Cart.vue";
 import About from "../views/About.vue";
+import Search from "../views/Search.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,8 +19,11 @@ const router = createRouter({
       component: Login
     },
     {
-      path: '/store',
-      component: Store
+      path: '/trending',
+      component: Trending
+    },    {
+      path: '/toprated',
+      component: TopRated
     },
     {
       path: '/cart',
@@ -28,6 +33,10 @@ const router = createRouter({
       path: '/about',
       component: About
     },
+    {
+      path: '/search',
+      component: Search
+    }
   ],
 });
 
