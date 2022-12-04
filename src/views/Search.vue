@@ -22,7 +22,7 @@ const props = defineProps({
 });
 
 const GoToPage = () => {
-  router.push('/toprated');
+  router.push('/trending');
 }
 
 const getData = async (url, params) => {
@@ -75,7 +75,7 @@ const print = (id) => {
   <div class="store-container">
     <Header page="Search" buttonPush="/" buttonName="Home"></Header>
     <div class="trending-container">
-      <button id="trendingOrTop" @click="GoToPage">Get Top Rated</button>
+      <button id="trendingOrTop" @click="GoToPage">Get Trending</button>
     </div>
     <div class="searchBox">
       <form @submit.prevent="login()">
@@ -215,7 +215,7 @@ const print = (id) => {
   align-items: center;
   width: 100%;
   height: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .searchBox form{
   display: flex;
@@ -224,7 +224,7 @@ const print = (id) => {
 #searchBar {
   /* height: 80%; */
   width: 80vw;
-  margin-left: 1%;
+  margin-left: 2%;
   /* display: block; */
   /* margin: 1% auto; */
   box-shadow: 0px 0px 15px #c2870c;
@@ -276,9 +276,9 @@ const print = (id) => {
   border-bottom-left-radius: 0;
   border: rgb(255, 180, 18) solid 3px;
   background-color: darkgoldenrod;
-  margin-right: 1%;
+  margin-right: 2%;
   color: black;
-  width: 20vw;
+  width: 20%;
   /* height: 3.3rem; */
   font-size: 150%;
   cursor: pointer;

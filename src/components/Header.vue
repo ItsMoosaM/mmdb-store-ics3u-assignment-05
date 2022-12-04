@@ -35,6 +35,8 @@ const GoToHome = () => {
     align-items: center;
     height: 4rem;
     background-color: black;
+    border-bottom: solid 3px darkgoldenrod;
+
 }
 
 .title {

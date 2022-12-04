@@ -65,7 +65,7 @@ const print = (id) => {
   console.log(id);
 };
 const GoToPage = () => {
-    router.push('/trending');
+    router.push('/search');
 }
 </script>
 
@@ -73,7 +73,7 @@ const GoToPage = () => {
   <div class="store-container">
     <Header page="Movies" buttonPush="/" buttonName="Home"></Header>
     <div class="trending-container">
-      <button id="trendingOrTop" @click="GoToPage" >Get Trending</button>
+      <button id="trendingOrTop" @click="GoToPage" >Search</button>
     </div>
     <div class="images">
       <TransitionGroup name="moviePostersList">

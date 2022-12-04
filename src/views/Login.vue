@@ -22,7 +22,7 @@ const login = () => {
 
 <template>
     <div>
-    <Header page="Login" buttonPush="/trending" buttonName="Store"></Header>
+    <Header page="Login" buttonPush="/" buttonName="Home"></Header>
         <div class="login-container">
             <h1>Login To Browse & Purchase</h1>
             <br>

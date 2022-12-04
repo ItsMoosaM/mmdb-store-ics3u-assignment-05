@@ -9,10 +9,10 @@ const GoToAbout = () => {
 <template>
   <div>
     <div id="footerContainer">
-      <h1 class="title 1" @click="router.push('/search')">Search</h1>
-      <!-- <h2 class="title2">Store</h2> -->
-
-      <h2 id="aboutUs" @click="GoToAbout">About Us</h2>
+      <h3 class="title 1" @click="router.push('/search')">By Moosa Mughal</h3>
+      <a id="aboutUs" href="https://developers.themoviedb.org/3" target="_blank" rel="noopener noreferrer">
+        <h3 @click="('https://developers.themoviedb.org/3')">Using The TMDB API</h3>
+      </a>
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@ const GoToAbout = () => {
   width: 100%;
   height: 4rem;
   margin: auto auto;
+  border-top: solid 3px darkgoldenrod;
   background-color: black;
 }
 
@@ -36,7 +37,7 @@ const GoToAbout = () => {
   display: inline;
   background-color: transparent;
   margin-left: 3%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .title2 {
