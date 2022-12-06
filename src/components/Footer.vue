@@ -11,7 +11,7 @@ const GoToAbout = () => {
     <div id="footerContainer">
       <h3 class="title 1" @click="router.push('/search')">By Moosa Mughal</h3>
       <div class="logo-container">
-        <img src="../assets/MMDB Logo Gold.png" alt="" @click="router.push('/')">
+        <img src="../assets/MMDB-Logo-Gold.png" alt="" @click="router.push('/')">
       </div>
       <a id="tmdbLink" href="https://developers.themoviedb.org/3" target="_blank" rel="noopener noreferrer">
         <h3 @click="('https://developers.themoviedb.org/3')">Using The TMDB API</h3>
