@@ -10,7 +10,10 @@ const GoToAbout = () => {
   <div>
     <div id="footerContainer">
       <h3 class="title 1" @click="router.push('/search')">By Moosa Mughal</h3>
-      <a id="aboutUs" href="https://developers.themoviedb.org/3" target="_blank" rel="noopener noreferrer">
+      <div class="logo-container">
+        <img src="../assets/MMDB Logo Gold.png" alt="" @click="router.push('/')">
+      </div>
+      <a id="tmdbLink" href="https://developers.themoviedb.org/3" target="_blank" rel="noopener noreferrer">
         <h3 @click="('https://developers.themoviedb.org/3')">Using The TMDB API</h3>
       </a>
     </div>
@@ -33,11 +36,12 @@ const GoToAbout = () => {
 }
 
 .title {
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
   float: left;
   display: inline;
   background-color: transparent;
   margin-left: 3%;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .title2 {
@@ -48,7 +52,33 @@ const GoToAbout = () => {
   margin-top: 0.5%;
 }
 
-#aboutUs {
+.logo-container {
+  pointer-events: none;
+  display: flex;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}.logo-container img{
+  pointer-events: auto;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  margin: auto;
+  height: 2rem;
+  width: auto;
+  cursor: pointer;
+}.logo-container img:hover{
+  width: auto;
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: all 0.2s;
+}
+
+#tmdbLink {
   background-color: transparent;
   margin-left: auto;
   margin-right: 3%;
@@ -56,7 +86,7 @@ const GoToAbout = () => {
   float: right;
 }
 
-#aboutUs:hover {
+#tmdbLink:hover {
   cursor: pointer;
 }
 </style>

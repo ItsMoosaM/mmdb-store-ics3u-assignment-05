@@ -20,7 +20,7 @@ const props = defineProps({
 });
 
 const GoToPage = () => {
-    router.push('/toprated');
+  router.push('/toprated');
 }
 
 const getData = async (url, params) => {
@@ -72,7 +72,7 @@ const print = (id) => {
   <div class="store-container">
     <Header page="Movies" buttonPush="/" buttonName="Home"></Header>
     <div class="trending-container">
-      <button id="trendingOrTop" @click="GoToPage" >Get Top Rated</button>
+      <button id="trendingOrTop" @click="GoToPage">Get Top Rated</button>
     </div>
     <div class="images">
       <TransitionGroup name="moviePostersList">
@@ -151,10 +151,10 @@ const print = (id) => {
 </template>
 
 <style scoped>
-.trending-container{
+.trending-container {
   position: absolute;
   margin: auto;
-  pointer-events:none;   
+  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -165,8 +165,9 @@ const print = (id) => {
   align-items: center;
   height: 4rem;
 }
+
 #trendingOrTop {
-  pointer-events:auto;
+  pointer-events: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,15 +269,14 @@ const print = (id) => {
   grid-column: span 1;
   margin: auto;
 }
-
-.image-container:nth-child(-n + 4) {
-  padding-top: 1rem;
-}
-
-.image-container:nth-child(6) img {
+.image-container img{
   aspect-ratio: 2/3;
   width: 100%;
   height: 100%;
+}
+
+.image-container:nth-child(-n + 5) {
+  padding-top: 1rem;
 }
 
 .moviePosters {

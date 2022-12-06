@@ -73,10 +73,10 @@ const get3dScene = () => {
       <div id="overlay">
       </div>
       <video autoplay muted loop>
-        <source src="../assets/marvel-opening-theme-ytmp4converter.com-en_Trim.mp4" type="video/mp4" />
+        <source src="../assets/marvel-opening-theme.mp4" type="video/mp4" />
       </video>
     </div>
-    <h1>For All Your Movie Needs!</h1>
+    <h1>For All Your Movie Needs</h1>
   </div>
 </template>
 
@@ -99,7 +99,7 @@ const get3dScene = () => {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 90%;
+  opacity: 92.5%;
   object-fit: cover;
   position: absolute;
 }
@@ -107,7 +107,6 @@ const get3dScene = () => {
 .video-container video {
   width: 100vw;
   height: 100%;
-  /* max-height: 80vw; */
   object-fit: cover;
 }
 
@@ -123,13 +122,14 @@ h1 {
   /* display: flex; */
   position: absolute;
   font-size: 350%;
+  text-decoration: overline underline;
   /* text-align: center; */
   /* line-height: 25rem; */
   /* margin-left: auto; */
   /* margin-right: auto; */
   background-color: transparent;
   opacity: 0%;
-  animation: 2.5s linear 2.5s textFade;
+  animation: 2.5s linear 3s textFade;
   animation-fill-mode: forwards;
 }
 

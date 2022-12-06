@@ -37,7 +37,7 @@ const props = defineProps({
   padding: 0.5rem;
   width: 90vw;
   /* max-width: 500px; */
-  height: 75vh;
+  height: 70vh;
   border: darkgoldenrod 0.5rem solid;
   border-radius: 0.05rem;
 }
@@ -55,7 +55,10 @@ const props = defineProps({
   font-size: x-large;
   border-radius: 20px;
 }
-
+/* slot{
+  width: 100%;
+  height: 100%;
+} */
 .x-button {
   /* display: flex;
   justify-content: right; */

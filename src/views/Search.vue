@@ -343,7 +343,7 @@ const print = (id) => {
   padding-top: 1rem;
 } */
 
-.image-container:nth-child(6) img {
+.image-container img{
   aspect-ratio: 2/3;
   width: 100%;
   height: 100%;

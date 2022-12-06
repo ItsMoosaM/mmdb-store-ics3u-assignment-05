@@ -270,11 +270,11 @@ const GoToPage = () => {
   margin: auto;
 }
 
-.image-container:nth-child(-n + 4) {
+.image-container:nth-child(-n + 5) {
   padding-top: 1rem;
 }
 
-.image-container:nth-child(6) img {
+.image-container img{
   aspect-ratio: 2/3;
   width: 100%;
   height: 100%;
