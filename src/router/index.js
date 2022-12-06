@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Login from "../views/Login.vue";
+import LoginPage from "../views/LoginPage.vue";
 import Trending from "../views/Trending.vue";
 import TopRated from "../views/TopRated.vue";
 import Cart from "../views/Cart.vue";
@@ -16,7 +16,7 @@ const router = createRouter({
     },
     {
       path: '/login',
-      component: Login
+      component: LoginPage
     },
     {
       path: '/trending',
