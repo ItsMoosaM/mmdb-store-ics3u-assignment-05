@@ -109,7 +109,7 @@ const print = (id) => {
               </a>
             </div>
             <div v-if="(allMovieData.videos.results.length!=0)" class="trailer">
-              <iframe v-if="(allMovieData.videos.results.filter((video) => video.type === 'Trailer').length==0)" :src="`https://www.youtube.com/embed/${allMovieData.videos.results
+              <iframe v-if="(allMovieData.videos.results.filter((video) => video.type === 'Trailer').length!=0)" :src="`https://www.youtube.com/embed/${allMovieData.videos.results
               .filter((video) => video.type === 'Trailer')
               .at(0).key
               }`" frameborder="0" class="trailer"></iframe>
