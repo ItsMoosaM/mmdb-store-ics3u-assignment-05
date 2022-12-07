@@ -13,7 +13,7 @@ const props = defineProps({
     <div v-if="show" class="modal-mask" @click="$emit('close')">
       <div class="modal-container" @click.stop="">
         <button @click="$emit('close')" class="x-button">X</button>
-        <div>
+        <div class="modal-content-container">
           <slot>
           </slot>
         </div>
@@ -40,8 +40,14 @@ const props = defineProps({
   height: 70vh;
   border: darkgoldenrod 0.5rem solid;
   border-radius: 0.05rem;
+  margin: auto;
 }
-
+/* .modal-content-container{
+  display: grid;
+  place-items: center;
+  align-content: center;
+  margin: auto;
+} */
 .close-button {
   margin: auto;
   display: flex;
@@ -55,10 +61,7 @@ const props = defineProps({
   font-size: x-large;
   border-radius: 20px;
 }
-/* slot{
-  width: 100%;
-  height: 100%;
-} */
+
 .x-button {
   /* display: flex;
   justify-content: right; */
@@ -79,7 +82,7 @@ const props = defineProps({
 }
 
 .v-enter-active {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
 }
 
 .v-leave-active {

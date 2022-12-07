@@ -101,15 +101,15 @@ const print = (id) => {
         <template #default>
           <div class="modal-info-container">
             <h4 class="title">{{ allMovieData.title }}</h4>
-            <h5 class="tagline">{{ allMovieData.tagline }}</h5>
+            <h5 class="tagline" v-if="(allMovieData.tagline != '')">{{ allMovieData.tagline }}</h5>
             <p class="overview">{{ allMovieData.overview }}</p>
             <div class="poster">
               <a :href="`${allMovieData.homepage}`" target="_blank">
                 <img :src="`https://image.tmdb.org/t/p/w500${allMovieData.poster_path}`" alt="" />
               </a>
             </div>
-            <div class="trailer">
-              <iframe :src="`https://www.youtube.com/embed/${allMovieData.videos.results
+            <div v-if="(allMovieData.videos.results.length!=0)" class="trailer">
+              <iframe v-if="(allMovieData.videos.results.filter((video) => video.type === 'Trailer').length==0)" :src="`https://www.youtube.com/embed/${allMovieData.videos.results
               .filter((video) => video.type === 'Trailer')
               .at(0).key
               }`" frameborder="0" class="trailer"></iframe>
@@ -123,10 +123,11 @@ const print = (id) => {
             <div class="release-date">
               <h3>Release Date</h3>
               <h4>{{ allMovieData.release_date }}</h4>
-              <h3>Country</h3>
-              <h4>{{ allMovieData.production_countries.at(0).name }}</h4>
+              <h3 v-if="(allMovieData.production_countries.length != 0)">Country</h3>
+              <h4 v-if="(allMovieData.production_countries.length != 0)">{{ allMovieData.production_countries.at(0).name
+              }}</h4>
             </div>
-            <div class="productionCompanies">
+            <div v-if="(allMovieData.production_countries.length!=0)" class="productionCompanies">
               <h3>Production Companies</h3>
               <ul>
                 <li>
@@ -217,10 +218,12 @@ const print = (id) => {
   height: 4rem;
   margin-bottom: 2rem;
 }
-.searchBox form{
+
+.searchBox form {
   display: flex;
   justify-content: center;
 }
+
 #searchBar {
   /* height: 80%; */
   width: 80vw;
@@ -343,7 +346,7 @@ const print = (id) => {
   padding-top: 1rem;
 } */
 
-.image-container img{
+.image-container img {
   aspect-ratio: 2/3;
   width: 100%;
   height: 100%;
@@ -474,19 +477,22 @@ const print = (id) => {
 }
 
 @keyframes glowEffect {
-    from {
-        box-shadow: 0px 0px 24px #c2870c;
-    }
-    to {
-        box-shadow: 0px 0px 10px #c2870c;
-    }
+  from {
+    box-shadow: 0px 0px 24px #c2870c;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px #c2870c;
+  }
 }
+
 @keyframes glowEffectSelected {
-    from {
-        box-shadow: 0px 0px 32px #c2870c;
-    }
-    to {
-        box-shadow: 0px 0px 10px #c2870c;
-    }
+  from {
+    box-shadow: 0px 0px 32px #c2870c;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px #c2870c;
+  }
 }
 </style>

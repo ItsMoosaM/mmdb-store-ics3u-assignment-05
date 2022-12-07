@@ -2,6 +2,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls.js'
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 // container = document.getElementById('model-container');
 // document.body.appendChild(container)
@@ -76,7 +78,11 @@ const get3dScene = () => {
         <source src="../assets/marvel-opening-theme.mp4" type="video/mp4" />
       </video>
     </div>
-    <h1>For All Your Movie Needs</h1>
+    <div class="text-overlay">
+      <h1>MMDB Store&#8482</h1>
+      <h6>For All Your Movie Needs</h6>
+      <button id="loginButton" @click="router.push('/login')">Login</button>
+    </div>
   </div>
 </template>
 
@@ -118,20 +124,45 @@ const get3dScene = () => {
     position: static;
 } */
 
-h1 {
+.text-overlay {
   /* display: flex; */
   position: absolute;
-  font-size: 350%;
-  text-decoration: overline underline;
-  /* text-align: center; */
-  /* line-height: 25rem; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
   background-color: transparent;
-  opacity: 0%;
-  animation: 2.5s linear 3s textFade;
-  animation-fill-mode: forwards;
 }
+
+.text-overlay h1{
+  font-size: 360%;
+  text-decoration: overline underline;
+  background-color: transparent;
+  line-height: 150%;
+  opacity: 0%;
+  animation: 2.5s linear 3.5s textFade;
+  animation-fill-mode: forwards;
+}.text-overlay h6{
+  font-size: 150%;
+  text-decoration: none;
+  background-color: transparent;
+  line-height: 150%;
+  opacity: 0%;
+  animation: 2s linear 5.5s textFade;
+  animation-fill-mode: forwards;
+}.text-overlay button{
+  font-size: 170%;
+  background-color: transparent;
+  border: solid 3px darkgoldenrod;
+  line-height: 150%;
+  opacity: 0%;
+  animation: 2s linear 5.5s textFade;
+  margin-top: 2%;
+  padding: 0px 5% 0px 5%;
+  animation-fill-mode: forwards;
+  border-radius: 0.05rem;
+}.text-overlay button:hover{
+  font-size: 170%;
+  background-color: rgba(184, 135, 11, 0.2);
+  cursor: pointer;
+}
+
 
 @keyframes textFade {
   from {
