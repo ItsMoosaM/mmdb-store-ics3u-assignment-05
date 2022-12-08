@@ -70,12 +70,8 @@ const GoToHome = () => {
     width: 24%;
     margin-right: 4%;
     border-radius: 1rem;
-}
-
-#loginButton:hover {
-    background-color: #191919;
-    border: rgb(161, 115, 17) 5px solid;
-    display: block;
+}#loginButton:hover {
+    background-color: rgba(184, 135, 11, 0.2);
     cursor: pointer;
 }
 </style>

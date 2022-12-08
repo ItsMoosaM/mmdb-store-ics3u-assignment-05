@@ -105,7 +105,7 @@ const get3dScene = () => {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 92.5%;
+  opacity: 95%;
   object-fit: cover;
   position: absolute;
 }
