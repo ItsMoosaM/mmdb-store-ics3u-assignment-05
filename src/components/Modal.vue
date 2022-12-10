@@ -160,6 +160,7 @@ watchEffect(() => {
 
 .title {
   grid-column: span 6;
+  margin-top: 1%;
   text-decoration: overline underline;
   background: transparent;
   text-align: center;

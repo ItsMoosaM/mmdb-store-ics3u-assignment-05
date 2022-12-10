@@ -119,6 +119,7 @@ const get3dScene = () => {
 
 .text-overlay {
   position: absolute;
+  font-size: 4vw;
   background-color: transparent;
 }
 
@@ -161,7 +162,7 @@ const get3dScene = () => {
 @keyframes textFade {
   from {
     opacity: 0%;
-    transform: scale(0.95);
+    transform: scale(0.90);
   }
 
   to {
@@ -173,5 +174,11 @@ const get3dScene = () => {
 img {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (min-width: 500px){
+  .text-overlay{
+    font-size: 20px;
+  }
 }
 </style>
