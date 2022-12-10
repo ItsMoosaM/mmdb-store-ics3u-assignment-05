@@ -36,7 +36,6 @@ const GoToAbout = () => {
 }
 
 .title {
-  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
   float: left;
   display: inline;
   background-color: transparent;

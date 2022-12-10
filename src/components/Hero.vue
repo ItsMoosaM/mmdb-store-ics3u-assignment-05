@@ -79,7 +79,8 @@ const get3dScene = () => {
       </video>
     </div>
     <div class="text-overlay">
-      <h1>MMDB Store&#8482</h1>
+      <h2>MMDB&#8482 Presents</h2>
+      <h1>MMDB Store</h1>
       <h6>For All Your Movie Needs</h6>
       <button id="loginButton" @click="router.push('/login')">Login</button>
     </div>
@@ -116,16 +117,7 @@ const get3dScene = () => {
   object-fit: cover;
 }
 
-/* #model-container {
-    width: 100%;
-    height: 200px;
-    margin: 100px;
-    padding: 0px;
-    position: static;
-} */
-
 .text-overlay {
-  /* display: flex; */
   position: absolute;
   background-color: transparent;
 }
@@ -136,26 +128,28 @@ const get3dScene = () => {
   background-color: transparent;
   line-height: 150%;
   opacity: 0%;
-  animation: 2.5s linear 3.5s textFade;
-  animation-fill-mode: forwards;
+  animation: 2.5s linear 3.5s textFade forwards;
+}.text-overlay h2{
+  background-color: transparent;
+  line-height: 150%;
+  opacity: 0%;
+  animation: 2s linear 1.5s textFade forwards;
 }.text-overlay h6{
   font-size: 150%;
   text-decoration: none;
   background-color: transparent;
   line-height: 150%;
   opacity: 0%;
-  animation: 2s linear 5.5s textFade;
-  animation-fill-mode: forwards;
+  animation: 2s linear 6s textFade forwards;
 }.text-overlay button{
   font-size: 170%;
   background-color: transparent;
   border: solid 3px darkgoldenrod;
   line-height: 150%;
   opacity: 0%;
-  animation: 2s linear 5.5s textFade;
+  animation: 2s linear 6s textFade forwards;
   margin-top: 2%;
   padding: 0px 5% 0px 5%;
-  animation-fill-mode: forwards;
   border-radius: 0.05rem;
 }.text-overlay button:hover{
   font-size: 170%;
@@ -167,10 +161,12 @@ const get3dScene = () => {
 @keyframes textFade {
   from {
     opacity: 0%;
+    transform: scale(0.95);
   }
 
   to {
     opacity: 100%;
+    transform: scale(1);
   }
 }
 

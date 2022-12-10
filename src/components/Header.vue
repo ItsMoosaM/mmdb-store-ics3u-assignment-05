@@ -21,7 +21,6 @@ const GoToHome = () => {
     <div>
         <div id="headerContainer">
             <h1 class="title 1" @click="GoToHome">MMDB Store</h1>
-            <!-- <h2 class="title2" @click="GoToHome">Store</h2> -->
             <h1 id="pageName">{{ props.page }}</h1>
             <button id="loginButton" @click="GoToPage">{{ props.buttonName }}</button>
         </div>
@@ -43,13 +42,10 @@ const GoToHome = () => {
     background-color: black;
     margin-left: 3%;
     cursor: pointer;
-}
-
-.title2 {
-    background-color: black;
-    margin-left: 1%;
-    cursor: pointer;
-    margin-top: 0.5%;
+    text-decoration: overline underline;
+    font-size: 5vw;
+}.title:hover {
+    background-color: rgba(184, 135, 11, 0.2);
 }
 
 #pageName {
@@ -73,5 +69,11 @@ const GoToHome = () => {
 }#loginButton:hover {
     background-color: rgba(184, 135, 11, 0.2);
     cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    .title {
+     font-size: 32px;
+  }
 }
 </style>

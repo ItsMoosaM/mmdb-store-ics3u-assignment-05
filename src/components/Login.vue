@@ -51,7 +51,6 @@ h1{
     color: #c2880cb3;
 }
 form {
-    /* display: flex; */
     flex-direction: column;
     padding-bottom: 5%;
 }
@@ -91,7 +90,6 @@ form input {
     width: 80%;
     height: 40%;
     min-height: 35px;
-    /* background-color: #222e2c; */
     font-size: 180%;
     border: rgb(255, 180, 18) solid 3px;
     /* Animation */

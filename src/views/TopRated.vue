@@ -9,6 +9,7 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import Modal from "../components/Modal.vue";
 
+let modalId = ref(null);
 let isModalOpen = ref(false);
 let allMovieData = ref(null);
 let pageOn = ref(1);
@@ -49,29 +50,20 @@ const get20Movies = async () => {
 };
 get20Movies();
 
-const getMoreMovieData = async (movieId) => {
-  const extraData = await getData(`https://api.themoviedb.org/3/movie/${movieId}`, {
-    params: {
-      api_key: "ba4adcc4706ed37650e0a813de11a08f",
-      append_to_response: "videos",
-    },
-  });
-  allMovieData.value = extraData.data;
-  console.log(movieId);
-  console.log(allMovieData.value);
-  isModalOpen.value = true;
-};
-const print = (id) => {
-  console.log(id);
-};
 const GoToPage = () => {
     router.push('/search');
+}
+
+const showModal = (id) => {
+  console.log(id)
+  modalId.value = `${id}`;
+  isModalOpen.value = true;
 }
 </script>
 
 <template>
   <div class="store-container">
-    <Header page="Movies" buttonPush="/" buttonName="Home"></Header>
+    <Header page="Movies" buttonPush="/" buttonName="Home" />
     <div class="trending-container">
       <button id="trendingOrTop" @click="GoToPage" >Search</button>
     </div>
@@ -79,75 +71,15 @@ const GoToPage = () => {
       <TransitionGroup name="moviePostersList">
         <li class="image-container" v-for="movies in movieTrending" :key="movies">
           <img class="moviePosters" :src="`https://image.tmdb.org/t/p/w500${movies.poster_path}`" :alt="movies.title"
-            :props.movieId="`${movies.id}`" @click="getMoreMovieData(movies.id)" />
+            :props.movieId="`${movies.id}`" @click="showModal(movies.id)" />
         </li>
       </TransitionGroup>
     </div>
-    <Footer></Footer>
+    <Footer />
     <button id="moreMoviesButton" @click="get20Movies" v-if="(pageOn <= 5)">More Movies</button>
-    <h3 v-if="(pageOn > 5)" class="thatsIt">That's It!!!</h3>
-    <Suspense>
-      <Modal :show="isModalOpen" @close="isModalOpen = false">
-        <template #default>
-          <div class="modal-info-container">
-            <h4 class="title">{{ allMovieData.title }}</h4>
-            <h5 class="tagline" v-if="(allMovieData.tagline!='')">{{ allMovieData.tagline }}</h5>
-            <p class="overview">{{ allMovieData.overview }}</p>
-            <div class="poster">
-              <a :href="`${allMovieData.homepage}`" target="_blank">
-                <img :src="`https://image.tmdb.org/t/p/w500${allMovieData.poster_path}`" alt="" />
-              </a>
-            </div>
-            <div class="trailer">
-              <iframe :src="`https://www.youtube.com/embed/${allMovieData.videos.results
-              .filter((video) => video.type === 'Trailer')
-              .at(0).key
-              }`" frameborder="0" class="trailer"></iframe>
-              <a target="_blank" :href="`https://www.youtube.com/watch?v=${allMovieData.videos.results
-              .filter((video) => video.type === 'Trailer')
-              .at(0).key
-              }`">
-                <p>View On Youtube</p>
-              </a>
-            </div>
-            <div class="release-date">
-              <h3>Release Date</h3>
-              <h4>{{ allMovieData.release_date }}</h4>
-              <h3 v-if="(allMovieData.production_countries.length!=0)">Country</h3>
-              <h4 v-if="(allMovieData.production_countries.length!=0)">{{ allMovieData.production_countries.at(0).name }}</h4>
-            </div>
-            <div class="productionCompanies">
-              <h3>Production Companies</h3>
-              <ul>
-                <li>
-                  {{ allMovieData.production_companies.at(0).name }}
-                </li>
-                <li v-if="allMovieData.production_companies.length > 1">
-                  {{ allMovieData.production_companies.at(1).name }}
-                </li>
-                <li v-if="allMovieData.production_companies.length > 2">
-                  {{ allMovieData.production_companies.at(2).name }}
-                </li>
-              </ul>
-            </div>
-            <div class="productionCompanies">
-              <h3>Genres</h3>
-              <ul>
-                <li>
-                  {{ allMovieData.genres.at(0).name }}
-                </li>
-                <li v-if="allMovieData.genres.length > 1">
-                  {{ allMovieData.genres.at(1).name }}
-                </li>
-                <li v-if="allMovieData.genres.length > 2">
-                  {{ allMovieData.genres.at(2).name }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </template>
-      </Modal>
-    </Suspense>
+    <h3 v-if="(pageOn > 5)" class="thatsIt">That's Enough!!!</h3>
+    
+    <Modal :show="isModalOpen" @close="isModalOpen = false" :id="modalId" />
   </div>
 </template>
 
@@ -256,9 +188,9 @@ const GoToPage = () => {
 
 .images {
   margin: 0 2% 0 2%;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* grid-template-rows: repeat(5, auto); */
   gap: 1rem;
   row-gap: 1rem;
 }
@@ -270,9 +202,6 @@ const GoToPage = () => {
   margin: auto;
 }
 
-.image-container:nth-child(-n + 5) {
-  padding-top: 1rem;
-}
 
 .image-container img{
   aspect-ratio: 2/3;
@@ -356,7 +285,6 @@ const GoToPage = () => {
 .trailer {
   grid-column: span 4;
   text-align: center;
-  /* height: fit-content; */
   margin: auto;
   width: 90%;
   height: 90%;
@@ -385,22 +313,16 @@ const GoToPage = () => {
   text-align: center;
 }
 
-.close-button {
-  /* margin: auto;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center; */
-  grid-column: span 6;
-  background: rgb(173, 127, 0);
-  color: black;
-  padding: 1% 5%;
-  /* margin-top: 10%; */
-  font-size: x-large;
-  border-radius: 20px;
-}
-
-.close-button:hover {
-  background: #ffca45;
-}
+@media screen and (max-width: 200px) and (max-width: 400px){
+  .images {
+  grid-template-columns: repeat(1, 1fr);
+}}
+@media screen and (max-width: 400px) and (min-width: 200px){
+  .images {
+  grid-template-columns: repeat(2, 1fr);
+}}
+@media screen and (max-width: 500px) and (min-width: 400px){
+  .images {
+  grid-template-columns: repeat(4, 1fr);
+}}
 </style>
