@@ -224,7 +224,12 @@ watchEffect(() => {
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 1%;
+}.trailer a{
+  text-decoration: none;
+}.trailer a:hover{
+  text-decoration: underline;
 }
+
 
 .release-date-and-country {
   grid-column: span 2;

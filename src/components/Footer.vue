@@ -43,6 +43,10 @@ const GoToAbout = () => {
   cursor: pointer;
 }
 
+.title:hover {
+  text-decoration: underline;
+}
+
 .title2 {
   float: left;
   display: inline;
@@ -61,7 +65,9 @@ const GoToAbout = () => {
   height: 100%;
   width: 100%;
   background-color: transparent;
-}.logo-container img{
+}
+
+.logo-container img {
   pointer-events: auto;
   display: flex;
   justify-self: center;
@@ -70,7 +76,9 @@ const GoToAbout = () => {
   height: 2rem;
   width: auto;
   cursor: pointer;
-}.logo-container img:hover{
+}
+
+.logo-container img:hover {
   width: auto;
   cursor: pointer;
   transform: scale(1.04);
@@ -79,6 +87,7 @@ const GoToAbout = () => {
 
 #tmdbLink {
   background-color: transparent;
+  text-decoration: none;
   margin-left: auto;
   margin-right: 3%;
   text-align: right;
@@ -86,6 +95,7 @@ const GoToAbout = () => {
 }
 
 #tmdbLink:hover {
+  text-decoration: underline;
   cursor: pointer;
 }
 </style>

@@ -113,6 +113,7 @@ const showModal = (id) => {
 }
 
 #trendingOrTop:hover {
+  transition: .2s ease;
   background-color: rgb(255, 180, 18);
   color: black;
 }
@@ -143,16 +144,16 @@ const showModal = (id) => {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-}
 
-#moreMoviesButton:hover {
-  background-color: rgb(255, 180, 18);
+  box-shadow: 0px 5px 0rem 0vw rgb(116, 85, 9);
+}#moreMoviesButton:hover {
+  transition: .2s ease;
+  background-color: rgb(210, 154, 12);
   color: black;
-}
-
-#moreMoviesButton:active {
-  background-color: rgb(255, 180, 18);
-  border: rgb(255, 180, 18) solid 3px;
+}#moreMoviesButton:active {
+  background-color: rgb(236, 173, 15);
+  border: rgb(255, 193, 37) solid ;
+  box-shadow: 0px 0px 0rem 0vw rgb(116, 85, 9);
 }
 
 .close-mask {

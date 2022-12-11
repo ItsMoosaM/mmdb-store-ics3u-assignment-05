@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
+button:hover{
+  transition: .3s ease;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: #0f0d06;
+    background: #c2870c;
+}
+
+::selection {
+    color: #0f0d06;
+    background: #c2870c;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

@@ -44,7 +44,10 @@ const GoToHome = () => {
     cursor: pointer;
     text-decoration: overline underline;
     font-size: 5vw;
-}.title:hover {
+}
+
+.title:hover {
+    transition: .2s ease;
     background-color: rgba(184, 135, 11, 0.2);
 }
 
@@ -66,14 +69,17 @@ const GoToHome = () => {
     width: 24%;
     margin-right: 4%;
     border-radius: 1rem;
-}#loginButton:hover {
+}
+
+#loginButton:hover {
+    transition: .3s ease;
     background-color: rgba(184, 135, 11, 0.2);
     cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
     .title {
-     font-size: 32px;
-  }
+        font-size: 32px;
+    }
 }
 </style>

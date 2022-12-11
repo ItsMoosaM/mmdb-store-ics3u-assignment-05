@@ -44,12 +44,15 @@ const login = () => {
     width: 100vw;
     height: 80vh;
 }
-h1{
+
+h1 {
     font-size: 2.5rem;
 }
-::placeholder{
+
+::placeholder {
     color: #c2880cb3;
 }
+
 form {
     flex-direction: column;
     padding-bottom: 5%;
@@ -61,7 +64,8 @@ form {
     margin-left: auto;
     margin-right: auto;
 }
-#password{
+
+#password {
     margin-left: auto;
     margin-right: auto;
 }
@@ -73,11 +77,15 @@ form {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-}#login:hover {
-    background-color: rgb(161, 115, 17);
+}
+
+#login:hover {
+    transition: .2s ease;
+    background-color: rgb(199, 142, 19);
     border: rgb(255, 200, 83) solid 3px;
     color: black;
 }
+
 #login:active {
     background-color: rgb(255, 180, 18);
     border: rgb(255, 180, 18) solid 3px;
@@ -121,7 +129,7 @@ form input {
     font-weight: bold;
 }
 
-p{
+p {
     text-align: center;
     display: block;
 }

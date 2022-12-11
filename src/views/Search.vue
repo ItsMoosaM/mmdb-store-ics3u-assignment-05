@@ -115,6 +115,7 @@ const showModal = (id) => {
 }
 
 #trendingOrTop:hover {
+  transition: .2s ease;
   background-color: rgb(255, 180, 18);
   color: black;
 }
@@ -130,7 +131,7 @@ const showModal = (id) => {
 }
 
 .searchBox {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,6 +153,7 @@ const showModal = (id) => {
   min-height: 35px;
   font-size: 180%;
   border: 2px solid #c2870c;
+  border-right: 0px;
   border-radius: 0.9rem;
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
@@ -190,8 +192,9 @@ const showModal = (id) => {
   border-radius: 1rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border: rgb(255, 180, 18) solid 3px;
-  background-color: darkgoldenrod;
+  border: #c2870c solid 3px;
+  border-left:0px;
+  background-color: rgb(167, 123, 12);
   margin-right: 2%;
   color: black;
   width: 20%;
@@ -201,13 +204,15 @@ const showModal = (id) => {
 }
 
 #moreMoviesButton:hover {
+  transition: .3s ease;
   background-color: rgb(255, 180, 18);
   color: black;
 }
 
 #moreMoviesButton:active {
   background-color: rgb(255, 180, 18);
-  border: rgb(255, 180, 18) solid 3px;
+  border: #ffbd2f solid ;
+  border-left: 0px;
 }
 
 .close-mask {

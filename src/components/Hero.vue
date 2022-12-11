@@ -119,10 +119,26 @@ const get3dScene = () => {
 
 .text-overlay {
   position: absolute;
+  padding: 1.8rem;
   font-size: 4vw;
   background-color: transparent;
+  border-radius: 1rem;
+  animation: 1s linear textGlow 10s infinite alternate;
 }
-
+@keyframes textGlow {
+  /* 0% {
+    box-shadow: 0px 0px 0rem 0vw darkgoldenrod, inset 0px 0px 0rem 0vw darkgoldenrod;
+  }
+  30%{
+    box-shadow: 0px 0px 0rem 0vw darkgoldenrod, inset 0px 0px 0rem 0vw darkgoldenrod;
+  } */
+  0%{
+    box-shadow: 0px 0px .1rem 0vw darkgoldenrod, inset 0px 0px .1rem 0vw darkgoldenrod;
+  }
+  100% {
+    box-shadow: 0px 0px 1rem 1vw darkgoldenrod, inset 0px 0px 1rem .5vw darkgoldenrod;
+  }
+}
 .text-overlay h1{
   font-size: 360%;
   text-decoration: overline underline;
@@ -153,6 +169,7 @@ const get3dScene = () => {
   padding: 0px 5% 0px 5%;
   border-radius: 0.05rem;
 }.text-overlay button:hover{
+  transition: .1s ease;
   font-size: 170%;
   background-color: rgba(184, 135, 11, 0.2);
   cursor: pointer;
@@ -164,7 +181,6 @@ const get3dScene = () => {
     opacity: 0%;
     transform: scale(0.90);
   }
-
   to {
     opacity: 100%;
     transform: scale(1);
