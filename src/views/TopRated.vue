@@ -212,13 +212,15 @@ const showModal = (id) => {
 .moviePosters {
   max-width: 100%;
   max-height: 100%;
+  border: solid darkgoldenrod 4px;
   border-radius: 0.2rem;
 }
 
 .moviePosters:hover {
+  border-color: #ffbd2f;
   cursor: pointer;
   transform: scale(1.04);
-  transition: all 0.2s;
+  transition: transform 0.2s;
 }
 
 .modal-info-container {

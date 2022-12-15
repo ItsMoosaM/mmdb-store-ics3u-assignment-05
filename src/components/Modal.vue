@@ -113,12 +113,12 @@ watchEffect(() => {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(184, 135, 11, 0.1);
+  background: rgba(184, 135, 11, 0.2);
   border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(205, 151, 13, 0.5);
+  background: rgba(205, 151, 13, 0.8);
 }
 
 .modal-mask {
