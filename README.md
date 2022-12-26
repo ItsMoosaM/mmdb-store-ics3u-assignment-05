@@ -1,4 +1,4 @@
-# MMDB Store
+# [MMDB Store](https://itsmoosam.github.io/mmdb-store-ics3u-assignment-05/)
 
 This is a sub company based on my MMDB website for assignment 4 and works using (Vue 3 + Vite), and the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction).
 
