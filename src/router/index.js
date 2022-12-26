@@ -8,7 +8,7 @@ import About from "../views/About.vue";
 import Search from "../views/Search.vue";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/mmdb-store-ics3u-assignment-05/'),
   routes: [
     {
       path: '/',
